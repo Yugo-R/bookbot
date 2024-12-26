@@ -8,6 +8,20 @@ def count_words(file):
 
     return count
 
+def count_char(file):
+
+    char_count = {}
+
+    file = file.lower()
+
+    for char in file:
+        if char not in char_count:
+            char_count[char] = 1
+        else:
+            char_count[char] += 1
+
+    return char_count
+
 
 def main():
 
@@ -22,6 +36,8 @@ def main():
         frankenstein_word_counts = count_words(file_contents)
 
         print(frankenstein_word_counts)
+
+        print(count_char(file_contents))
 
         
 
