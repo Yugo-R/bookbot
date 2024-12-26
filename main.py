@@ -12,6 +12,8 @@ def count_char(file):
 
     char_count = {}
 
+    alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
+
     file = file.lower()
 
     for char in file:
@@ -20,7 +22,8 @@ def count_char(file):
         else:
             char_count[char] += 1
 
-    return char_count
+    for c in alphabet:
+        print(f"The '{c}' character was found {char_count[c]} times")
 
 
 def main():
@@ -35,13 +38,14 @@ def main():
 
         frankenstein_word_counts = count_words(file_contents)
 
-        print(frankenstein_word_counts)
+        print(f"--- Begin report of {frankenstein_book_path} ---")
 
-        print(count_char(file_contents))
+        print(f"{frankenstein_word_counts} words found in the document")
+        print("\n")
+        print("\n")
 
-        
+        count_char(file_contents)
 
-        
-  
+        print("--- End report ---")
 
 main()
