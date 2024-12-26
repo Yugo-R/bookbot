@@ -1,3 +1,14 @@
+def count_words(file):
+    count = 0
+
+    splited_file = file.split()
+
+    for word in splited_file:
+        count += 1
+
+    return count
+
+
 def main():
 
     books_path = "books/"
@@ -7,6 +18,10 @@ def main():
 
     with open(frankenstein_book_path) as f:
         file_contents = f.read()
+
+        frankenstein_word_counts = count_words(file_contents)
+
+        print(frankenstein_word_counts)
 
         
 
